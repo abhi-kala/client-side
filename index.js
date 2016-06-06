@@ -6,7 +6,7 @@ xhr.get('https://api.wheretheiss.at/v1/satellites', function (err, data) {
     console.log(err)
   }
 
-  console.log(data.body[0].name) // in case you're curious
+  console.log(data.body) // in case you're curious
 
   document.body.innerHTML = example(data.body)
 })
