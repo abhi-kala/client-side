@@ -73,7 +73,6 @@ function isFunction(o){var t=toString.call(o);return"[object Function]"===t||"fu
 
 },{}],25:[function(require,module,exports){
 var trim=require("trim"),forEach=require("for-each"),isArray=function(r){return"[object Array]"===Object.prototype.toString.call(r)};module.exports=function(r){if(!r)return{};var e={};return forEach(trim(r).split("\n"),function(r){var t=r.indexOf(":"),i=trim(r.slice(0,t)).toLowerCase(),o=trim(r.slice(t+1));"undefined"==typeof e[i]?e[i]=o:isArray(e[i])?e[i].push(o):e[i]=[e[i],o]}),e};
-
 },{"for-each":2,"trim":26}],26:[function(require,module,exports){
 function trim(r){return r.replace(/^\s*|\s*$/g,"")}exports=module.exports=trim,exports.left=function(r){return r.replace(/^\s*/,"")},exports.right=function(r){return r.replace(/\s*$/,"")};
 
@@ -85,5 +84,5 @@ function once(n){var o=!1;return function(){return o?void 0:(o=!0,n.apply(this,a
 function extend(){for(var r={},e=0;e<arguments.length;e++){var t=arguments[e];for(var n in t)hasOwnProperty.call(t,n)&&(r[n]=t[n])}return r}module.exports=extend;var hasOwnProperty=Object.prototype.hasOwnProperty;
 
 },{}],30:[function(require,module,exports){
-var HandlebarsCompiler=require("hbsfy/runtime");module.exports=HandlebarsCompiler.template({1:function(e,a,n,l,r){var o;return"  <h1>Hello "+e.escapeExpression((o=null!=(o=n.name||(null!=a?a.name:a))?o:n.helperMissing,"function"==typeof o?o.call(null!=a?a:{},{name:"name",hash:{},data:r}):o))+"!</h1>\n"},compiler:[7,">= 4.0.0"],main:function(e,a,n,l,r){var o;return null!=(o=n.each.call(null!=a?a:{},a,{name:"each",hash:{},fn:e.program(1,r,0),inverse:e.noop,data:r}))?o:""},useData:!0});
+var HandlebarsCompiler=require("hbsfy/runtime");module.exports=HandlebarsCompiler.template({1:function(e,a,n,r,l){return"  <h1>Hello "+e.escapeExpression(e.lambda(null!=a?a.name:a,a))+"!</h1>\n"},compiler:[7,">= 4.0.0"],main:function(e,a,n,r,l){var o;return null!=(o=n.each.call(null!=a?a:{},a,{name:"each",hash:{},fn:e.program(1,l,0),inverse:e.noop,data:l}))?o:""},useData:!0});
 },{"hbsfy/runtime":23}]},{},[1]);
