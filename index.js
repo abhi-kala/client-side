@@ -9,9 +9,6 @@ xhr.get('https://api.wheretheiss.at/v1/satellites', function (err, data) {
   console.log(data.body) // in case you're curious
   console.log(data.body[0]) // in case you're curious
   console.log(data.body[0].name) // in case you're curious
-  data.body.forEach(function (element) {
-    console.log(element);
-  })
 
   document.body.innerHTML = example(data.body)
 })
